@@ -1,39 +1,59 @@
-name: CSB2025
+# Conda environment for the CSB signalling practical (sessions 8 and 9).
+#
+# Verified on 2026-10-28: the whole practical notebook runs end to end with
+# zero errors using exactly these versions (311 packages, about 620 MB).
+#
+# DO NOT bump ginsim above 3.0.0b without testing first.
+# With ginsim 3.1.post20260708 and 3.1.post20261018 (the versions an unpinned
+# solve picks today) the Java side registers no bioLQM tools, so
+# biolqm.fixpoints, biolqm.trapspaces and biolqm.random simply stop existing
+# and the notebook dies at the attractor analysis. Tested with openjdk 11, 21
+# and 25, so it is the GINsim build and not the Java version.
+#
+# ginsim-python provides both the "ginsim" and the "biolqm" python modules.
+# ginsim 3.0.0b pulls openjdk 11 on its own, no need to pin Java here.
+
+name: CSB
+
 channels:
   - colomoto
   - conda-forge
+
 dependencies:
   - python=3.12
-  - numpy
-  - pandas
-  - scipy
-  - scikit-learn
-  - matplotlib
-  - seaborn
-  - statsmodels
-  - networkx
-  - jupyterlab
-  - ipykernel
-  - notebook
-  - ipywidgets
-  - ipylab
-  - graphviz
-  - pygraphviz
-  - pydot
-  - colomoto_jupyter
-  - cmaboss
-  - maboss
-  - ginsim
-  - ginsim-python
-  - boolsim
-  - boolsim-python
-  - bns
-  - bns-python
+
+  # CoLoMoTo suite, this exact combination is the tested one
+  - ginsim=3.0.0b
+  - ginsim-python=0.4.10
+  - colomoto_jupyter=0.9.3
+  - maboss=2.6.8
+  - cmaboss=1.0.0b34
+  - pymaboss=0.8.17
+  - boolsim=1.2
+  - boolsim-python=0.5
+  - bns=1.3
+  - bns-python=0.2
   - boolean.py
-  - espresso-logic-minimizer
-  - clingo
-  - nusmv
-  - pymaboss
-  - pip
-  - pip:
-      - ipylab==1.1.0
+  - espresso-logic-minimizer=9999
+  - clingo=5.8.2
+  - nusmv=2.7.0
+
+  # notebook
+  - jupyterlab=4.6.4
+  - notebook=7.6.3
+  - ipykernel=7.4.0
+  - ipywidgets=8.1.9
+  - ipylab=1.1.0
+
+  # data and plotting
+  - numpy=2.5.4
+  - pandas=3.1.0
+  - scipy=1.18.1
+  - matplotlib=3.11.2
+  - seaborn=0.13.2
+  - networkx=3.7
+  - graphviz=14.1.2
+  - pygraphviz=2.0.4
+  - pydot=1.2.4
+  - scikit-learn=1.9.1
+  - statsmodels=0.15.0
