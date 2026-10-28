@@ -2,7 +2,18 @@
 
 Hands-on material on Boolean modelling of signalling networks for
 **Computational Systems Biology** (42589), Master's in Bioinformatics, ETSE,
-Universitat de Valencia. Sessions 8 and 9.
+Universitat de Valencia. **Session 8**.
+
+## The three practical sessions
+
+| Session | Topic | Repository |
+|---|---|---|
+| **S8** | Boolean modelling of signalling networks | [CSB_signalling](https://github.com/ArnauMontagud/CSB_signalling) |
+| S9 | Cell-line specific models from omics data (PROFILE) | [CSB_personalisation](https://github.com/ArnauMontagud/CSB_personalisation) |
+| S10 | Constraint-based metabolic modelling and FBA | [CSB_metabolic](https://github.com/ArnauMontagud/CSB_metabolic) |
+
+All three are listed with their launch badges at
+[CSB_course_UV](https://github.com/ArnauMontagud/CSB_course_UV).
 
 ## Run it in your browser
 
@@ -26,7 +37,7 @@ Two things to know before you start:
 |---|---|
 | `practical_signalling.ipynb` | The notebook we use in class, with hands-on 1 to 3 and tasks 1 to 3 |
 | `models/Metastasis_Master_Model.zginml` | Metastasis model, the worked example |
-| `models/PKN.zginml` | Prostate cancer model, used in the tasks |
+| `models/PKN.zginml` | Model of a cell line built around survival pathways, used in the tasks |
 | `binder/Dockerfile` | The environment Binder builds, pinned to a tested CoLoMoTo image |
 | `environment.yml` | The exact software versions, for installing locally |
 | `INSTALL.md` | How to run everything on your own machine instead |
