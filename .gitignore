@@ -1,0 +1,19 @@
+# produced when you run the notebook
+toy.bnet
+*_probtraj.csv
+*_statdist.csv
+*_fp.csv
+*_run.txt
+*_res/
+
+# jupyter
+.ipynb_checkpoints/
+__pycache__/
+
+# solutions never live in the student repository
+*SOLUTION*
+*_solucion*
+
+# OS
+.DS_Store
+Thumbs.db
